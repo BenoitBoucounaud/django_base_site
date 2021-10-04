@@ -56,6 +56,11 @@ function run_venv {
     . .venv/bin/activate
 }
 
+function run_server {
+    nicecho "strong" "** Running server **"
+    python ./base_site/manage.py runserver
+}
+
 # Checking parameters
 if [[ "$1" == "" ]]; then
    echo "Missing arguments."
@@ -69,7 +74,10 @@ case "$1" in
         ;;
     run_venv)
         run_venv
-        ;;       
+        ;;      
+    run_server)
+        run_server
+        ;;        
     *)
         echo "Unvalid environment detected (${1})"
         usage

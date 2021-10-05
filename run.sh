@@ -47,7 +47,9 @@ function init {
     python -m pip install -e django/
     nicecho "strong" "** Install psycopg2 **"
     pip install psycopg2
-    deactivate
+    nicecho "strong" "** Make migrations **"
+    python ./base_site/manage.py migrate
+    deactivate    
     nicecho "strong" "** Project initialised **"
 }
 

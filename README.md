@@ -2,7 +2,7 @@
 
 A Django classic site to keep basics close.
 
-![Progress](https://progress-bar.dev/05/?title=progress)
+![Progress](https://progress-bar.dev/12/?title=progress)
 
 ## Init project 
 To initialise the project type :
@@ -14,3 +14,7 @@ To run venv type :
 
 To exit venv type : 
 ``` deactivate```
+
+## Run django server 
+To run the server type : 
+```./run.sh run_server```

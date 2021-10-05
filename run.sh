@@ -42,9 +42,11 @@ function init {
     python3 -m venv .venv
     nicecho "strong" "** Install Python **"
     git clone https://github.com/django/django.git
-    nicecho "strong" "** Make Django's code importbale **"
     . .venv/bin/activate
+    nicecho "strong" "** Make Django's code importbale **"
     python -m pip install -e django/
+    nicecho "strong" "** Install psycopg2 **"
+    pip install psycopg2
     deactivate
     nicecho "strong" "** Project initialised **"
 }

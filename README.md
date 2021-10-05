@@ -17,15 +17,23 @@ To install and init postgreSQL :
 ```
 ## Init project 
 To initialise the project :
-``` source ./run.sh init```
+```
+    source ./run.sh init
+```
 
 ## Run venv
 To run venv : 
-```source ./run.sh run_venv```
+```
+    source ./run.sh run_venv
+```
 
 To exit venv : 
-``` deactivate```
+```
+    deactivate
+```
 
 ## Run django server 
 To run the server : 
-```./run.sh run_server```
+```
+    ./run.sh run_server
+```

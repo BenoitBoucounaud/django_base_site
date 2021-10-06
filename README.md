@@ -37,3 +37,8 @@ To run the server :
 ```
     ./run.sh run_server
 ```
+
+## Admin 
+Username : admin
+Email : admin@example.com
+Password : password

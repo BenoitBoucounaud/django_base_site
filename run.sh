@@ -42,10 +42,14 @@ function init {
     python3 -m venv .venv
     nicecho "strong" "** Install Python **"
     git clone https://github.com/django/django.git
-    nicecho "strong" "** Make Django's code importbale **"
     . .venv/bin/activate
+    nicecho "strong" "** Make Django's code importbale **"
     python -m pip install -e django/
-    deactivate
+    nicecho "strong" "** Install psycopg2 **"
+    pip install psycopg2
+    nicecho "strong" "** Migrate **"
+    python ./base_site/manage.py migrate
+    deactivate    
     nicecho "strong" "** Project initialised **"
 }
 
@@ -59,6 +63,12 @@ function run_venv {
 function run_server {
     nicecho "strong" "** Running server **"
     python ./base_site/manage.py runserver
+}
+
+function django_check {
+    # check project's conformity
+    nicecho "strong" "** Django check **"
+    python ./base_site/manage.py check
 }
 
 # Checking parameters
@@ -77,7 +87,10 @@ case "$1" in
         ;;      
     run_server)
         run_server
-        ;;        
+        ;;    
+    django_check)
+        django_check
+        ;;    
     *)
         echo "Unvalid environment detected (${1})"
         usage

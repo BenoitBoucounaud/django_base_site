@@ -39,6 +39,7 @@ To run the server :
 ```
 
 ## Admin 
+/admin/  
 Username : admin  
 Email : admin@example.com  
 Password : password  

@@ -29,12 +29,6 @@ function error_stop {
         exit 1
 }
 
-function usage {
-        echo "Usage: $0 <ACTION>"
-        echo "Parameters :"
-        echo " - ACTION values :"
-        echo "   * run_venv                            - Launching virtual environment."
-}
 
 function init {
     nicecho "error" "** To init the project you need to type 'source ./run.sh init' **"
@@ -71,6 +65,12 @@ function django_check {
     python ./base_site/manage.py check
 }
 
+function django_tests {
+    # run django tests
+    nicecho "strong" "** Running Django tests **"
+    python ./base_site/manage.py test polls
+}
+
 # Checking parameters
 if [[ "$1" == "" ]]; then
    echo "Missing arguments."
@@ -90,10 +90,24 @@ case "$1" in
         ;;    
     django_check)
         django_check
-        ;;    
+        ;;  
+    django_tests)
+        django_tests;;  
     *)
         echo "Unvalid environment detected (${1})"
         usage
         exit 1
         ;;
 esac
+
+
+function usage {
+        echo "Usage: $0 <ACTION>"
+        echo "Parameters :"
+        echo " - ACTION values :"
+        echo "   * init                                - Initiate project."
+        echo "   * run_venv                            - Launching virtual environment."
+        echo "   * run_server                          - Launching Django server."
+        echo "   * django_check                        - Check project's conformity."
+        echo "   * django_tests                        - Running Django tests."
+}

@@ -2,8 +2,6 @@
 
 A Django classic site to keep basics close.
 
-![Progress](https://progress-bar.dev/50/?title=progress)
-
 ## Install and init postgreSQL
 To install and init postgreSQL :
 ``` 
